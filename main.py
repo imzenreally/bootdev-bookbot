@@ -10,6 +10,11 @@ def main():
     word_count = get_word_count(book_text)
     letter_count = get_letter_count(book_text)
     print(f"Found {word_count} total words")
-    print(letter_count)
+    sorted_items = sorted(
+        letter_count.items(),
+        key=lambda item: item[1],
+        reverse=True
+    )
+    print(sorted_items)
 
 main()
