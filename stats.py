@@ -8,6 +8,11 @@ def get_letter_count(book_text):
     for char in text_lower:
         if char.isalpha():
             counts[char] = counts.get(char, 0) + 1
-    return counts
+    sorted_items = sorted(
+        counts.items(),
+        key=lambda item: item[1],
+        reverse=True
+    )
+    return sorted_items
 
 
